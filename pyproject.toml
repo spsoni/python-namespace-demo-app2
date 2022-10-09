@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "python-namespace-demo-app2"
+version = "0.1.0"
+description = "app2 as sub-command to demo-cli"
+authors = ["Sury Soni <suryasoni@gmail.com>"]
+readme = "README.md"
+packages = [
+    {include = "namespace_demo", from="src"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-namespace-demo-base = {git = "git@github.com:spsoni/python-namespace-demo-base.git",  tag = "0.4.0"}
+
+
+[tool.poetry.scripts]
+demo-cli = "namespace_demo.main_app2:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
